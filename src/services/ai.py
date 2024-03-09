@@ -19,8 +19,9 @@ tools = toolkit.get_tools()
 async def extract_description(jiraID: str):
     desc_template = """
     You are an AI assistant specializing in extracting specific information from Jira tickets. 
-    You have to read the text around the description for issue ID {jira_id} and return just the
-    value of the description.Exclude reading the images, new lines and links."""
+    You have to read the description for issue ID {jira_id} and return just the
+    value of the description.Do not read anything other than the description field.
+    Exclude reading the images, new lines and links."""
 
     _prompt = PromptTemplate.from_template(desc_template)
     prompt = _prompt.format(jira_id=jiraID)
@@ -36,7 +37,7 @@ async def extract_description(jiraID: str):
 async def extract_acceptance_criteria(jiraID: str):
     ac_template = """
     You are an AI assistant specializing in extracting specific information from Jira tickets. 
-    You have to read the custom field 'customfield_12655' for issue ID {jira_id} and return just the
+    You have to read the custom field 'customfield_35411' for issue ID {jira_id} and return just the
     value of the specific custom field without any added introduction."""
 
     _prompt = PromptTemplate.from_template(ac_template)
