@@ -9,17 +9,17 @@ To run app locally execute the following commands from the root:
 
 To run app locally using docker run the following commands from the root:
 
-1. docker build -t <username>/jira-sdlc-bot:1.0 .
+1. docker build -t <username>/jira-sdlc-bot-be:1.0 .
 2. docker images
-3. docker run -p 8000:8000 <username>/jira-sdlc-bot:1.0
+3. docker run -p 8000:8000 <username>/jira-sdlc-bot-be:1.0
 
 To push the docker image to private repository
 
-1. docker tag <username>/jira-sdlc-bot:1.0 <username>/jira-sdlc-bot:latest
-2. docker push <username>/jira-sdlc-bot:latest
+1. docker tag <username>/jira-sdlc-bot:1.0 <username>/jira-sdlc-bot-be:latest
+2. docker push <username>/jira-sdlc-bot-be:latest
 
 docker rmi -f $(docker images -aq)
-docker run -it --rm <username>/jira-sdlc-bot:latest sh
+docker run -it --rm <username>/jira-sdlc-bot-be:latest sh
 
 Sample URL:
 
